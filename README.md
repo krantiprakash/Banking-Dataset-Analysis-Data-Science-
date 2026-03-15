@@ -176,6 +176,8 @@ The notebook is structured as **18 business questions**, each answered with a ch
 
 ## Correlation Analysis
 
+**`r` (Pearson correlation coefficient)** measures how strongly a numeric feature is linearly related to the subscription outcome (`y`). A positive `r` means clients with higher values of that feature are more likely to subscribe; a negative `r` means higher values are associated with lower subscription likelihood. The closer `r` is to ±1, the stronger the relationship — values near 0 indicate little to no linear influence on whether a client subscribes.
+
 Pearson correlations between numeric features and the target variable `y` (encoded as 1=yes, 0=no):
 
 | Feature | Correlation with `y` | Direction |
