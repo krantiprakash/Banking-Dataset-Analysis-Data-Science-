@@ -24,9 +24,9 @@
 
 This project analyzes a **Portuguese bank's telemarketing campaign** data to understand what factors influence whether a client subscribes to a **term deposit**. The bank reached out to clients over phone calls, and the core business question is:
 
-> *Which clients are most likely to subscribe — and how can the bank target them more efficiently?*
+> **Which clients are most likely to subscribe — and how can the bank target them more efficiently?**
 
-At this stage, the project focuses entirely on **Exploratory Data Analysis (EDA)** — understanding the data distribution, client demographics, campaign behavior, and identifying correlations with the subscription outcome. No predictive models are built at this stage.
+At this stage, the project focuses entirely on **Exploratory Data Analysis (EDA)** — understanding the data distribution, client demographics, campaign behavior, and identifying correlations with the subscription outcome.
 
 ---
 
@@ -50,7 +50,7 @@ The dataset represents one record per client contact. Each row captures client d
 | No (did not subscribe) | 39,922 | 88.3% |
 | Yes (subscribed) | 5,294 | 11.7% |
 
-The dataset is **significantly imbalanced** — only about 1 in 9 clients subscribed. This is a critical consideration for any future modeling work.
+The dataset is **significantly imbalanced** — only about 1 in 9 clients subscribed.
 
 ---
 
@@ -97,17 +97,6 @@ The dataset is **significantly imbalanced** — only about 1 in 9 clients subscr
 
 ---
 
-## Project Structure
-
-```
-Banking_Dataset_Analysis/
-└── Banking-Dataset-Analysis-Data-Science-/
-    ├── banking_data.csv                 ← Raw dataset
-    ├── code(Finlatics_Banking).ipynb    ← Main EDA notebook
-    └── README.md                        ← This file
-```
-
----
 
 ## Setup & Requirements
 
@@ -129,14 +118,6 @@ pip install pandas numpy matplotlib seaborn scipy
 | `seaborn` | Styled charts, correlation heatmap |
 | `scipy.stats` | Normal distribution fitting |
 
-**To run locally**, update the file path in the notebook from:
-```python
-x = pd.read_csv("/content/drive/MyDrive/Fin_banking/banking_data.csv")
-```
-to:
-```python
-x = pd.read_csv("banking_data.csv")
-```
 
 ---
 
@@ -207,18 +188,18 @@ Pearson correlations between numeric features and the target variable `y` (encod
 | `day` | −0.028 | Negligible |
 | `campaign` | **−0.073** | More calls this campaign → less likely |
 
-> **Important caveat on `duration`:** Call duration is only known *after* the call ends. It cannot be used as an input feature in a real-time prediction system for *deciding who to call*. It is analytically significant but not actionable pre-call.
+> **Important note on `duration`:** Call duration is only known *after* the call ends. It cannot be used as an input feature in a real-time prediction system for *deciding who to call*. It is analytically significant but not actionable pre-call.
 
 ---
 
-## Limitations & What's Next
+## Limitations
 
 ### Current Limitations
 - `duration` is the strongest predictor but is a **post-call feature** — unavailable before the call is made.
 - The `poutcome` and `contact` columns have high "unknown" rates (81.7% and 28.8% respectively), limiting their predictive power without imputation strategies.
 - No statistical significance testing was performed on the distributions.
 
-### Next Stage — Predictive Modeling
+<!-- ### Next Stage — Predictive Modeling
 The EDA lays a strong foundation for building a classification model. Planned next steps:
 
 1. **Feature Engineering**
@@ -240,6 +221,6 @@ The EDA lays a strong foundation for building a classification model. Planned ne
 5. **Business Output**
    - Produce a **prioritized call list** — rank clients by subscription probability so the bank's agents call the most likely subscribers first, reducing cost and improving conversion rate.
 
----
+--- -->
 
 *This project is part of a data science internship at Finlatics. Dataset based on the UCI Bank Marketing Dataset — Moro et al., 2014.*
