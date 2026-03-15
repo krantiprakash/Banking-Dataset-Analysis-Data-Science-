@@ -16,7 +16,7 @@
 6. [EDA — Questions Explored](#eda--questions-explored)
 7. [Key Findings & Insights](#key-findings--insights)
 8. [Correlation Analysis](#correlation-analysis)
-9. [Limitations & What's Next](#limitations--whats-next)
+9. [Limitations](#limitations)
 
 ---
 
